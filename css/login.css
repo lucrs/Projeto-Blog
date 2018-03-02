@@ -1,0 +1,61 @@
+body{
+    background: #7f7f7f;
+}
+
+.login{
+    width: 489px;
+    height: 438px;
+    border-radius: 9px 9px 9px 9px;
+    background: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 100px;
+    display: inline-block;
+}
+
+.login .form{
+    margin-top: 22px;
+}
+
+.login h1{
+    text-align: center;
+}
+
+.login form{
+    margin: 0px 10px 0px 10px;
+}
+
+
+.form label{
+    position: absolute;
+    top: -55px;
+    left: 4px;
+    opacity: 0;
+
+}
+
+.form .email:focus ~ .lb-email, .form .password:focus ~ .lb-password{
+    top: -96px;
+    opacity: 1;
+    transition: ease .5s all;
+}
+.form label{
+    position: relative;
+}
+
+.login .button{
+    width: 100%;
+}
+
+
+.avatar-user{
+    position: relative;
+    left: 40%;
+    top: 11px;
+}
+.avatar-user img{
+    width: 100px;
+}
