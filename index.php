@@ -8,6 +8,7 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <link rel="stylesheet" href="css/login.css">
 
 </head>
@@ -22,14 +23,28 @@
             <div class="form">
 
                 <h1>Login</h1>
-                <form action="">
-
-                    <input type="email"  class="email form-control" placeholder="Entre com seu email" name="email"><br>
+                <form action="pages/login.php" method="post" autocomplete="off">
+                    <div class="inner-addon-1">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <input type="email"  class="email input-control form-control" placeholder="Entre com seu email" name="email" autocomplete="off" readonly onfocus="this.removeAttribute('readonly');"
+                           onBlur="this.setAttribute('readonly', true);"><br>
                     <label class="lb-email" for="email">E-mail*</label>
-                    <input type="password" class="password form-control" name="password" placeholder="Entre com sua senha"><br>
+                    <div class="inner-addon-2">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <input type="password" class="password input-control form-control" name="password" placeholder="Entre com sua senha" autocomplete="off"><br>
                     <label class="lb-password" for="password">Senha*</label>
+
                     <button class="button btn btn-success btn-lg">Logar</button>
                 </form>
+                <div class="sub-form">
+                    <button class="btn btn-danger">Cadastrar</button>
+                    <button class="btn btn-info">Esqueceu a senha</button>
+
+
+                </div>
+
             </div>
         </div>
     </div>

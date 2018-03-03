@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link rel="stylesheet" href="../css/cadastro.css">
+</head>
+<body>
+<div id="fullscreen_bg" class="fullscreen_bg"/>
+    <div class="container">
+        <div class="row">
+            <div class="cadastro">
+                <div class="">
+                    <div class="card-header">
+                       <h2>Pagina de cadastro</h2>
+                    </div>
+                    <div class="card-body">
+                        <form action="cadastro.php" method="post">
+
+                            <div class="ajust-cad">
+                                <label for="nome">Nome</label>
+                                <i class="fas fa-user"></i>
+                                <input type="text"id="nome" name="nome" class="form-control" placeholder="Digite seu nome" required>
+                            </div><br>
+                            <div class="ajust-cad">
+                                <label for="email">E-Mail</label>
+                                <i class="fas fa-envelope"></i>
+                                <input type="email"id="email" name="email" class="form-control" placeholder="Digite seu e-mail" required>
+                            </div><br>
+                            <div class="ajust-cad">
+                                <label for="telefone">Telefone</label>
+                                <i class="fas fa-mobile"></i>
+                                <input type="text" id="telefone"name="telefone" class="form-control" placeholder="Digite seu telefone" required>
+                            </div><br>
+                            <div class="ajust-cad">
+                                <label for="cpf">CPF</label>
+                                <i class="fas fa-id-card"></i>
+                                <input type="text" id="cpf"name="cpf" class="form-control" placeholder="Digite seu cpf" required>
+                            </div><br>
+                            <div class="ajust-cad">
+                                <label for="senha">Senha</label>
+                                <i class="fas fa-key"></i>
+                                <input type="password" id="senha" name="senha" class="form-control" placeholder="Digite sua senha" required>
+                            </div><br>
+                            <div class="ajust-cad">
+                                <label for="senha-confirm">Confirma Senha</label>
+                                <i class="fas fa-key"></i>
+                                <input type="password" id="senha-confirm" name="senha-confirm" class="form-control" placeholder="Digite sua senha novamente" required>
+                            </div>
+                            <br>
+
+                            <div class="button-cad">
+                                <button class="btn btn-success" name="submit"><i class="fas fa-save"></i> Enviar</button>
+                            </div>
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>

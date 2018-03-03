@@ -3,8 +3,9 @@ body{
 }
 
 .login{
+    border: 2px solid black;
     width: 489px;
-    height: 438px;
+    height: 505px;
     border-radius: 9px 9px 9px 9px;
     background: #ffffff;
     display: flex;
@@ -45,9 +46,30 @@ body{
 .form label{
     position: relative;
 }
+.form .password{
+    margin-top: -18px;
+}
+
+.form .password, .email{
+    border: hidden;
+    border-bottom: 1px solid black;
+    border-radius: 0px;
+}
+
+.form .input-control ,input[type="text"],[type="email"],[type="password"]{
+    background-color: transparent;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+
+    color: white;
+    cursor:default;
+}
 
 .login .button{
     width: 100%;
+    margin: -25px 0px 23px 0px;
 }
 
 
@@ -58,4 +80,34 @@ body{
 }
 .avatar-user img{
     width: 100px;
+}
+
+.sub-form{
+    text-align: center;
+}
+.inner-addon-1 {
+    position: relative;
+    top:32px;
+}
+.inner-addon-1 {
+
+    padding: 0 5px;
+    pointer-events: none;
+    color: #666;
+
+}
+.inner-addon-2 {
+    position: relative;
+    top: 14px;
+}
+.inner-addon-2 {
+
+    padding: 0 5px;
+    pointer-events: none;
+    color: #666;
+
+}
+
+.form-control{
+    padding-left: 32px;
 }
