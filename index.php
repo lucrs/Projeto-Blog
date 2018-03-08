@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+require 'DB/init.php';
+
+?>
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -9,48 +17,38 @@
 
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
     <link rel="stylesheet" href="css/login.css">
 
 </head>
-<body>
+<body id="index">
+<section >
 <div class="container">
     <div class="row">
 
-        <div class="login">
-            <div class="avatar-user">
-                <img src="img/avatar-user.png" alt="">
+        <div class="index">
+            <div class="title-index">
+                <h1>Bem Vindo</h1>
             </div>
-            <div class="form">
-
-                <h1>Login</h1>
-                <form action="pages/login.php" method="post" autocomplete="off">
-                    <div class="inner-addon-1">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <input type="email"  class="email input-control form-control" placeholder="Entre com seu email" name="email" autocomplete="off" readonly onfocus="this.removeAttribute('readonly');"
-                           onBlur="this.setAttribute('readonly', true);"><br>
-                    <label class="lb-email" for="email">E-mail*</label>
-                    <div class="inner-addon-2">
-                        <i class="fas fa-key"></i>
-                    </div>
-                    <input type="password" class="password input-control form-control" name="password" placeholder="Entre com sua senha" autocomplete="off"><br>
-                    <label class="lb-password" for="password">Senha*</label>
-
-                    <button class="button btn btn-success btn-lg">Logar</button>
-                </form>
-                <div class="sub-form">
-                    <button class="btn btn-danger">Cadastrar</button>
-                    <button class="btn btn-info">Esqueceu a senha</button>
-
-
-                </div>
-
+            <div class="sub-title">
+                <?php if (isLoggedIn()):  ?>
+                    <p>Ola, <?php echo $_SESSION['user_name'];?>. </p>
+                        <div class="button-index">
+                            <a class="btn btn-danger" href="pages/painel.php">Painel</a>
+                            <a class="btn btn-info"href="pages/logout.php">Sair</a>
+                        </div>
+                <?php else: ?>
+                    <br><p>Ola visitante. </p>
+                        <div class="visit">
+                            <a class="btn btn-dark" href="pages/login.html">Login</a>
+                        </div>
+                <?php endif;?>
             </div>
         </div>
     </div>
 </div>
 
-
+</section>
 
 <script src="bootstrap/js/bootstrap.min.js"></script>
 </body>

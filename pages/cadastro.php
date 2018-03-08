@@ -1,28 +1,46 @@
 <?php
-require_once '../DB/conn.php';
+require '../DB/init.php';
+require '../DB/valid-cpf.php';
 
 try{
 
-    $nome = $_POST['nome'];
+    $name = $_POST['name'];
     $email = $_POST['email'];
-    $tel = $_POST['telefone'];
+    $phone = $_POST['phone'];
     $cpf = $_POST['cpf'];
-    $senha =md5($_POST['senha']);
+    $password =sha1(md5($_POST['password']));
 
-    $stmt = $conn->prepare('insert into cadastros (nome,email,telefone,cpf,senha) VALUES (:nome,:email,:telefone,:cpf,:senha)');
+
+    if (validaCPF($_POST['cpf'])){
+
+
+    }else{
+        die('Cpf invalido');
+    }
+
+    $PDO= db_connect();
+
+    $sql = 'insert into users (name,email,phone,cpf,password) VALUES (:name,:email,:phone,:cpf,:password)';
+    $stmt = $PDO->prepare($sql);
     $stmt->execute(array(
-        ':nome'=>$nome,
+        ':name'=>$name,
         ':email'=>$email,
-        ':telefone'=>$tel,
+        ':phone'=>$phone,
         ':cpf'=>$cpf,
-        ':senha'=>$senha
+        ':password'=>$password
     ));
 
-    echo $stmt->rowCount();
+    header('Location:login.html');
 
 } catch (PDOException $e){
     echo 'Error'. $e->getMessage();
 }
+
+
+
+
+
+
 
 
 
