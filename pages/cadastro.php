@@ -1,6 +1,5 @@
 <?php
 require '../DB/init.php';
-require '../DB/valid-cpf.php';
 
 try{
 
@@ -10,13 +9,6 @@ try{
     $cpf = $_POST['cpf'];
     $password =sha1(md5($_POST['password']));
 
-
-//    if (validaCPF($_POST['cpf'])){
-//
-//
-//    }else{
-//        die('Cpf invalido');
-//    }
 
     $PDO= db_connect();
 
