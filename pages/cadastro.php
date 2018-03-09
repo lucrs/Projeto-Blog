@@ -11,12 +11,12 @@ try{
     $password =sha1(md5($_POST['password']));
 
 
-    if (validaCPF($_POST['cpf'])){
-
-
-    }else{
-        die('Cpf invalido');
-    }
+//    if (validaCPF($_POST['cpf'])){
+//
+//
+//    }else{
+//        die('Cpf invalido');
+//    }
 
     $PDO= db_connect();
 

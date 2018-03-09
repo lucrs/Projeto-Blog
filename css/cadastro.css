@@ -14,7 +14,7 @@
 .cadastro{
     border: 2px solid black;
     width: 489px;
-    height: 825px;
+    height:873px;
     border-radius: 9px 9px 9px 9px;
     background: #ffffff;
     display: flex;
@@ -39,3 +39,10 @@
     margin-left: 9px;
 }
 
+.back-home-cad{
+    text-align: center;
+    margin-top: 17px;
+    color: white;
+    position: relative;
+    top: 20px;
+}

@@ -1,6 +1,7 @@
 @import "buttons.css";
 @import "cadastro.css";
 @import "style.css";
+@import "painel.css";
 
 
 
@@ -22,6 +23,9 @@
 
 #main-login{
     background-image: url('../img/img-01.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: -webkit-fill-available;
 }
 
 #main-login::before{
@@ -166,4 +170,14 @@
     padding-left: 32px;
 }
 
+.back-home a{
+    color: white;
+    font-size: 22px;
+}
+
+.back-home{
+    text-align: center;
+    margin-top: 17px;
+    color: white;
+}
 

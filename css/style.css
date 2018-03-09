@@ -1,14 +1,15 @@
 #index{
-    background:url('http://www.wallpaperup.com/uploads/wallpapers/2012/10/21/20181/cad2441dd3252cf53f12154412286ba0.jpg');
+    background-image: url("../img/background-black-and-white-4.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: -webkit-fill-available;
 }
 
 .index{
-    border: 2px solid black;
+
     width: 727px;
-    height: 717px;
-    border-radius: 9px 9px 9px 9px;
-    background: #ffffff;
-    display: flex;
+    height: 558px;
+
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -21,6 +22,8 @@
 .title-index{
     text-align: center;
     letter-spacing: 5px;
+    position: relative;
+    top: 52px;
 }
 .title-index h1{
     font-family: 'Dancing Script', cursive;
@@ -28,4 +31,17 @@
 
 .sub-title{
     text-align: center;
+}
+
+.visit{
+    position: relative;
+    top: 85px;
+}
+
+.visit p {
+    font-size: 28px;
+}
+
+.visit span{
+    color: darkviolet;
 }

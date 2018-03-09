@@ -29,18 +29,24 @@ require 'DB/init.php';
         <div class="index">
             <div class="title-index">
                 <h1>Bem Vindo</h1>
+                <h2>Ao Blog do Lucas</h2>
             </div>
             <div class="sub-title">
                 <?php if (isLoggedIn()):  ?>
-                    <p>Ola, <?php echo $_SESSION['user_name'];?>. </p>
+                <div class="visit">
+                    <p>Ola, <span><?php echo $_SESSION['user_name'];?>.</span> </p>
                         <div class="button-index">
-                            <a class="btn btn-danger" href="pages/painel.php">Painel</a>
-                            <a class="btn btn-info"href="pages/logout.php">Sair</a>
+                            <a class="btn btn-dark" href="pages/admin/painel.php">Painel</a>
+                            <a class="btn btn-dark"href="pages/logout.php">Sair</a>
                         </div>
-                <?php else: ?>
-                    <br><p>Ola visitante. </p>
+                </div>
+                <?php else: ?><br>
                         <div class="visit">
-                            <a class="btn btn-dark" href="pages/login.html">Login</a>
+                            <p>Ola visitante. Faça o login ou o cadastro </p>
+                            <div class="button-index">
+                                <a class="btn btn-dark" href="pages/login.html">Logar</a>
+                                <a class="btn btn-dark" href="pages/cadastro.html">Cadastrar</a>
+                            </div>
                         </div>
                 <?php endif;?>
             </div>
