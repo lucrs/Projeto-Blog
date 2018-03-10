@@ -1,5 +1,7 @@
-#Objetivo Blog
-Para fins de estudo.  Em desenvolvimento.
+#Objetivo
+
+Para fins de estudo... Em desenvolvimento.
+
 
 #Resumo
 
