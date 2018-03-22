@@ -4,9 +4,10 @@ session_start();
 require_once '../DB/init.php';
 
 require '../DB/check.php';
+
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <title>Painel</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -15,8 +16,7 @@ require '../DB/check.php';
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.css">
 
 
-    <link rel="stylesheet" href="../vendor/froala_editor/css/froala_style.min.css">
-    <link rel="stylesheet" href="../vendor/froala_editor/css/froala_editor.pkgd.min.css">
+
 
 
 
@@ -52,34 +52,43 @@ require '../DB/check.php';
                 <div class="add-post">
                     <h1>Adicionar Post</h1>
                 </div>
-                <form>
+                <form action="save-add.php" enctype="multipart/form-data" method="post">
                     <div class="form-group">
                         <label for="titulo">Titulo</label>
-                        <input type="text" class="form-control" id="titulo" placeholder="Digite o titulo...">
+                        <input type="text" class="form-control" name="titulo" id="titulo" placeholder="Digite o titulo...">
                     </div>
                     <div class="form-group">
                         <label for="autor">Autor</label>
-                        <input type="text" class="form-control" id="autor" placeholder="name@example.com">
+                        <input type="text" class="form-control" name="autor" id="autor" placeholder="Digite o autor">
                     </div>
                     <div class="form-group">
-                        <textarea> </textarea>
+                        <label for="img">Imagem</label>
+                        <input type="file" class="form-control" name="img" id="img" >
+                    </div>
+                    <div class="form-group">
+                         <textarea name="editor-text" id="editor-text" rows="10" cols="80">
 
+                        </textarea>
+                    </div>
+                    <div class="form-group">
+                        <input class="btn btn-danger" type="submit" name="enviar" value="Enviar">
                     </div>
                 </form>
             </div>
         </div>
-
     </section>
 </main>
 
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
 <script src="../js/jquery-3.3.1.min.js"></script>
 <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="/vendor/ckeditor/ckeditor.js"></script>
+<script src="../js/ckeditor.js"></script>
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/xml/xml.min.js"></script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.7.6/js/froala_editor.pkgd.min.js"></script>
-<script> $(function() { $('textarea').froalaEditor() }); </script>
 </body>
 </html>
