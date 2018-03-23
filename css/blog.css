@@ -1,9 +1,40 @@
-#header{
-    background-image: url("../img/header.jpg");
+.header{
+    background-image: url("../img/Google-Blog.png");
     width: 100%;
-    height: 247px;
+    height: 300px;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.w3-container{
+    align-items: center;
+    display: grid;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.w3-card-4{
+    width: 505px;
+}
+
+.img-blog img{
+    width: 200px;
+    position: relative;
+    left: 166px;
+}
+
+.title-header{
+    text-align: center;
+    letter-spacing:5px;
+    position: relative;
+    top: 114px;
+
+}
+.title-header h1{
+    margin-top: 0;
+    font-size: 73px;
+    font-family: 'Lily Script One', cursive;
 }
 
 .w3-card-4{
@@ -18,4 +49,26 @@
 
 .img-blog{
     text-align: center;
+}
+
+
+@media (max-width: 991px) {
+    .img-blog img{
+        left: 0;
+
+    }
+
+}
+
+
+
+#footer{
+    background-color: #585c62;;
+}
+#footer .footer-text p{
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+#footer .footer-text span{
+    color: rgb(250, 155, 3);
 }

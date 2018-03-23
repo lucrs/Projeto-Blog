@@ -1,17 +1,29 @@
 <?php
 session_start();
-
 require_once '../DB/init.php';
 
 require '../DB/check.php';
 
-require_once "config-blog.php";
+
+if( isset($_GET['id']) ) {
+    $id = $_GET['id'];
 
 
 
+    $pdo = db_connect();
+
+    $sql = "select * from posts where id_post = $id";
+
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+
+}
 
 ?>
-
 
 
 <!doctype html>
@@ -70,24 +82,26 @@ require_once "config-blog.php";
 
 <div class="w3-container">
     <?php foreach ($result as $row){ ?>
-    <div class="w3-card-4" >
+        <div class="w3-card-4 col-xs-12" >
 
-        <div class="row">
-            <div class="title-blog">
-                <h1><a href="single-page.php?id=<?=$row['id_post'];?>"><?=$row['titulo']?></a></h1>
-            </div>
-            <div class="img-blog col-md-6">
-             <?php echo "<img src=fotos/".$row["image"]." alt='Foto de exibição'/><br/>" ?>
-            </div>
-            <di class="row">
+            <div class="row">
+                <div class="title-blog">
+                    <h1><?=$row['titulo']?></a></h1>
+                </div>
 
-            </di>
-            <div class="conteudo-blog">
-                <br> <p><?=$row['conteudo']?></p>
-            </div>
+                <di class="row">
+                    <div class="conteudo-single col-xs-10">
+                        <div class="col-xs-12">
+                            <p><?=$row['conteudo']?></p>
+                        </div>
 
+                    </div>
+                </di>
+
+
+
+            </div>
         </div>
-    </div>
     <?php }?>
 </div>
 
@@ -111,6 +125,3 @@ require_once "config-blog.php";
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-
-</body>
-</html>
