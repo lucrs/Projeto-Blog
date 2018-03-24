@@ -6,23 +6,6 @@
     background-size: cover;
 }
 
-.w3-container{
-    align-items: center;
-    display: grid;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.w3-card-4{
-    width: 505px;
-}
-
-.img-blog img{
-    width: 200px;
-    position: relative;
-    left: 166px;
-}
 
 .title-header{
     text-align: center;
@@ -37,10 +20,25 @@
     font-family: 'Lily Script One', cursive;
 }
 
-.w3-card-4{
-    margin-bottom: 29px;
-    text-align: center;
+main{
+    background-color: #f2f2f2;
+    padding-top: 36px;
+}
 
+.card-blog{
+    margin-bottom: 20px;
+    box-shadow: 0 7px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+}
+
+.title-blog{
+    text-align: center;
+}
+.title-blog a{
+    color: black;
+}
+.title-blog a:hover{
+    text-decoration: none;
+    color: grey;
 }
 
 .title-blog{
@@ -50,17 +48,58 @@
 .img-blog{
     text-align: center;
 }
+.img-blog img{
+    width: 250px;
+}
 
+.conteudo-blog{
+    text-align: center;
+}
 
-@media (max-width: 991px) {
-    .img-blog img{
-        left: 0;
-
-    }
-
+.conteudo-blog img{
+    width: 334px !important;
 }
 
 
+#aside{
+    width: 285px;
+    padding: 0 10px 0 0px;
+    float: right;
+    margin: 0px 72px 60px 0px;
+    margin-top: 28px;
+    box-shadow: 0 7px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+}
+
+.title-aside{
+    text-align: center;
+}
+
+.img-aside img{
+    width: 250px;
+    position: relative;
+    left: 18px;
+}
+
+.sub-title-aside{
+    text-align: center;
+    font-size: 21px;
+    margin: 4px 1px 0px 6px;
+    color: indigo;
+}
+
+.social-aside span{
+    font-size: 46px;
+    margin-left: 17px;
+    color: black;
+}
+.social-aside span:hover{
+    color: indigo;
+}
+
+.conteudo-blog a{
+    font-size: 21px;
+    color: darkblue;
+}
 
 #footer{
     background-color: #585c62;;
@@ -72,3 +111,4 @@
 #footer .footer-text span{
     color: rgb(250, 155, 3);
 }
+
