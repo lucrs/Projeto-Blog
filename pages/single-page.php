@@ -1,27 +1,8 @@
 <?php
 session_start();
 require_once '../DB/init.php';
-
 require '../DB/check.php';
-
-
-if( isset($_GET['id']) ) {
-    $id = $_GET['id'];
-
-
-
-    $pdo = db_connect();
-
-    $sql = "select * from posts where id_post = $id";
-
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute();
-
-    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-
-
-}
+require_once 'single-config.php';
 
 ?>
 
@@ -70,6 +51,7 @@ if( isset($_GET['id']) ) {
 
 <body id="main-login">
 <main>
+    <section id="conteudo">
     <div class="container">
         <div class="row">
             <div class="login">
@@ -77,14 +59,14 @@ if( isset($_GET['id']) ) {
                         <div id="single-blog" class="w3-card-4" >
 
                             <div class="row">
-                                <div class="title-blog">
-                                    <h1><a href="single-page.php?id=<?=$row['id_post'];?>"><?=$row['titulo']?></a></h1>
+                                <div class="title-single">
+                                    <h1><?=$row['titulo']?></h1>
                                 </div>
 
                                 <di class="row">
 
                                 </di>
-                                <div class="conteudo-blog">
+                                <div class="conteudo-single">
                                     <br> <p><?=$row['conteudo']?></p>
                                 </div>
 
@@ -94,8 +76,42 @@ if( isset($_GET['id']) ) {
             </div>
         </div>
     </div>
+        <div class="after-p">
+            <p></p>
+        </div>
+    </section>
+    <section id="comentarios">
+        <div class="container">
+            <div class="row">
+                <div class="comentarios">
+                    <div class="title-comment">
+                        <h1>Comentarios</h1>
+                    </div>
+                    <form action="comment.php" method="post">
+                        <div class="ajust-comment">
+                            <label for="nome">Nome</label>
+                            <input class="form-control" type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                        </div>
+                        <br>
+                        <div class="ajust-comment">
+                            <label for="email">Email</label>
+                            <input class="form-control" type="email" id="email" name="email" placeholder="Digite seu email" required>
+                        </div>
+                        <br>
+                        <div class="ajust-comment">
+                            <label for="comentario">Comentario</label>
+                            <textarea class="form-control" name="comentario" id="comentario" cols="30" rows="10"></textarea>
+                        </div>
+                        <div class="buttom-comment">
+                            <input class="btn btn-success" type="submit" value="Enviar" name="enviar">
+                            <input class="btn btn-danger" type="submit" value="Limpar">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
 
-
+    </section>
 </main>
 
 
