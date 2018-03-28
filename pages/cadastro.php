@@ -11,6 +11,7 @@ try{
 
 
     $PDO= db_connect();
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $sql = 'insert into users (name,email,phone,cpf,password) VALUES (:name,:email,:phone,:cpf,:password)';
     $stmt = $PDO->prepare($sql);

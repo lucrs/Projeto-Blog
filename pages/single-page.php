@@ -4,6 +4,8 @@ require_once '../DB/init.php';
 require '../DB/check.php';
 require_once 'single-config.php';
 
+require_once 'comment.php';
+
 ?>
 
 
@@ -41,6 +43,10 @@ require_once 'single-config.php';
         <ul class="navbar-nav">
             <li class="nav-item active">
                 <a class="nav-link" href="blog.php">Inicio <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+
+                <?php echo '<a class="nav-link" href="logout.php?token='.md5(session_id()).'">Sair<span class="sr-only">(current)</span></a>'; ?>
             </li>
 
         </ul>
@@ -80,24 +86,15 @@ require_once 'single-config.php';
             <p></p>
         </div>
     </section>
-    <section id="comentarios">
+    <section id="form-comentarios">
         <div class="container">
             <div class="row">
-                <div class="comentarios">
+                <div class="form-comentarios">
                     <div class="title-comment">
                         <h1>Comentarios</h1>
                     </div>
-                    <form action="comment.php" method="post">
-                        <div class="ajust-comment">
-                            <label for="nome">Nome</label>
-                            <input class="form-control" type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
-                        </div>
-                        <br>
-                        <div class="ajust-comment">
-                            <label for="email">Email</label>
-                            <input class="form-control" type="email" id="email" name="email" placeholder="Digite seu email" required>
-                        </div>
-                        <br>
+                    <form action="form-comment.php" method="post">
+
                         <div class="ajust-comment">
                             <label for="comentario">Comentario</label>
                             <textarea class="form-control" name="comentario" id="comentario" cols="30" rows="10"></textarea>
@@ -110,7 +107,23 @@ require_once 'single-config.php';
                 </div>
             </div>
         </div>
+    </section>
+    <section id="comentarios">
+        <div class="container">
+            <div class="row">
+                <div class="comentarios">
+                    <?php foreach ($coments as $coment){?>
+                        <div class="comment-name">
+                            <h3><?=$coment['nome'];?></h3>
+                        </div>
+                        <div class="comment-content">
+                            <p><?=$coment['comentario'];?></p><br>
+                        </div>
 
+                    <?php }?>
+                </div>
+            </div>
+        </div>
     </section>
 </main>
 

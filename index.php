@@ -23,24 +23,24 @@ require 'DB/init.php';
 </head>
 <body id="index">
 <section >
-<div class="container">
-    <div class="row">
+    <div class="container">
+        <div class="row">
 
-        <div class="index">
-            <div class="title-index">
-                <h1>Bem Vindo</h1>
-                <h2>Ao Blog do Lucas</h2>
-            </div>
-            <div class="sub-title">
-                <?php if (isLoggedIn()):  ?>
-                <div class="visit">
-                    <p>Ola, <span><?php echo $_SESSION['user_name'];?>.</span> </p>
-                        <div class="button-index">
-                            <a class="btn btn-dark" href="pages/painel.php">Painel</a>
-                                <?php echo '<a class="btn btn-dark" href="pages/logout.php?token='.md5(session_id()).'">Sair</a>'; ?><!-- adicionar botao entrar blog-->
-                        </div>
+            <div class="index">
+                <div class="title-index">
+                    <h1>Bem Vindo</h1>
+                    <h2>Ao Blog do Lucas</h2>
                 </div>
-                <?php else: ?><br>
+                <div class="sub-title">
+                    <?php if (isLoggedIn()):  ?>
+                        <div class="visit">
+                            <p>Ola, <span><?php echo $_SESSION['user_name'];?>.</span> </p>
+                            <div class="button-index">
+                                <a class="btn btn-dark" href="pages/painel.php">Painel</a>
+                                <?php echo '<a class="btn btn-dark" href="pages/logout.php?token='.md5(session_id()).'">Sair</a>'; ?><!-- adicionar botao entrar blog-->
+                            </div>
+                        </div>
+                    <?php else: ?><br>
                         <div class="visit">
                             <p>Ola visitante. Faça o login ou o cadastro </p>
                             <div class="button-index">
@@ -48,16 +48,15 @@ require 'DB/init.php';
                                 <a class="btn btn-dark" href="pages/cadastro.html">Cadastrar</a>
                             </div>
                         </div>
-                <?php endif;?>
+                    <?php endif;?>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 </section>
 
 <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
-
 

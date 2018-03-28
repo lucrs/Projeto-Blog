@@ -7,20 +7,6 @@
 
 
 
-@font-face {
-    font-family: Montserrat-Regular;
-    src: url('../fonts/montserrat/Montserrat-Regular.ttf');
-}
-
-@font-face {
-    font-family: Montserrat-ExtraBold;
-    src: url('../fonts/montserrat/Montserrat-ExtraBold.ttf');
-}
-
-@font-face {
-    font-family: Montserrat-Bold;
-    src: url('../fonts/montserrat/Montserrat-Bold.ttf');
-}
 
 
 #main-login{
@@ -89,7 +75,7 @@
     opacity: 1;
     transition: ease .5s all;
     font-size: 19px;
-    font-family: Montserrat-Bold;
+    font-family: 'Montserrat', sans-serif;
 
 }
 
@@ -113,7 +99,7 @@
 }
 
 .form .input-control ,input[type="text"],[type="email"],[type="password"]{
-    font-family: Montserrat-Bold;
+    font-family: 'Montserrat', sans-serif;
     font-size: 15px;
     line-height: 1.2;
     color: #333333;
