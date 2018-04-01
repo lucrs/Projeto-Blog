@@ -101,31 +101,31 @@ require_once "config-blog.php";
 
             <?php }?>
             </div>
-        <nav aria-label="Page navigation example">
-            <ul class="pagination">
-                <li class="page-item">
-                    <a class="page-link" href="blog.php?page=0" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                </li>
-                <?php
-                $i= 0;
-                for($i=0;$i<$num_paginas;$i++){
-                    $estilo = "";
-                    if($pagina == $i)
-                        $estilo = "class=\"active\"";
-                    ?>
-                    <li <?= $estilo;?>class="page-item"><a class="page-link" href="blog.php?page=<?= $i; ?>"><?php echo $i+1; ?></a></li>
-                <?php }?>
-                <li class="page-item">
-                    <a class="page-link" href="blog.php?page=<?=$num_paginas-1; ?>" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+<!--        <nav aria-label="Page navigation example">-->
+<!--            <ul class="pagination">-->
+<!--                <li class="page-item">-->
+<!--                    <a class="page-link" href="blog.php?page=0" aria-label="Previous">-->
+<!--                        <span aria-hidden="true">&laquo;</span>-->
+<!--                        <span class="sr-only">Previous</span>-->
+<!--                    </a>-->
+<!--                </li>-->
+<!--                --><?php
+//                $i= 0;
+//                for($i=0;$i<$num_paginas;$i++){
+//                    $estilo = "";
+//                    if($pagina == $i)
+//                        $estilo = "class=\"active\"";
+//                    ?>
+<!--                    <li --><?//= $estilo;?><!--class="page-item"><a class="page-link" href="blog.php?page=--><?//= $i; ?><!--">--><?php //echo $i+1; ?><!--</a></li>-->
+<!--                --><?php //}?>
+<!--                <li class="page-item">-->
+<!--                    <a class="page-link" href="blog.php?page=--><?//=$num_paginas-1; ?><!--" aria-label="Next">-->
+<!--                        <span aria-hidden="true">&raquo;</span>-->
+<!--                        <span class="sr-only">Next</span>-->
+<!--                    </a>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--        </nav>-->
     </section>
 
 </main>

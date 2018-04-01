@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once '../DB/init.php';
-require '../DB/check.php';
 require_once 'single-config.php';
 
 require_once 'comment.php';

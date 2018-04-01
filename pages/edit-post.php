@@ -4,6 +4,7 @@ session_start();
 require_once '../DB/init.php';
 
 require '../DB/check.php';
+require_once 'config-edit-post.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -11,6 +12,8 @@ require '../DB/check.php';
     <title>Painel</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="../css/painel.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.css">
 
 </head>
 <body>
@@ -40,16 +43,81 @@ require '../DB/check.php';
         <div class="container">
             <div class="row">
                 <div class="edit-post">
-                    <h1>Editar Post</h1>
+                    <h1>Lista Post</h1>
+                    <table class="table table-hover">
+
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Titulo</th>
+                            <th>Autor</th>
+                            <th>Ação</th>
+
+
+                        </tr>
+
+                        </thead>
+                        <?php foreach ($result as $results){?>
+                        <tbody>
+                        <tr>
+                            <td><?=$results['id_post'] ?></td>
+                            <td><?=$results['titulo']?></td>
+                            <td><?=$results['autor']?></td>
+                            <td><a href="single-page.php?id=<?=$results['id_post']?>"><i class="fas fa-share-square"></i></a>
+                                <a href="delete-post.php?id=<?=$results['id_post']?>"><i class="far fa-trash-alt"></i></a>
+                            </td>
+
+                        </tr>
+
+                        </tbody>
+                        <?php }?>
+                    </table>
+                    <div class="add-post">
+                        <h1>Editar Post</h1>
+                    </div>
+                    <form action="update-post.php" enctype="multipart/form-data" method="post">
+                        <div class="form-group">
+                            <label for="id">Id</label>
+                            <input type="text" class="form-control" name="id" id="id">
+                        </div>
+                        <div class="form-group">
+                            <label for="titulo">Titulo</label>
+                            <input type="text" class="form-control" name="titulo" id="titulo" placeholder="Digite o titulo...">
+                        </div>
+                        <div class="form-group">
+                            <label for="autor">Autor</label>
+                            <input type="text" class="form-control" name="autor" id="autor" placeholder="Digite o autor">
+                        </div>
+                        <div class="form-group">
+                            <label for="img">Imagem</label>
+                            <input type="file" class="form-control" name="img" id="img" >
+                        </div>
+                        <div class="form-group">
+                         <textarea name="editor-text" id="editor-text" rows="10" cols="80">
+
+                        </textarea>
+                        </div>
+                        <div class="form-group">
+                            <input class="btn btn-danger" type="submit" name="enviar" value="Enviar">
+                        </div>
+                    </form>
+                </div>
                 </div>
             </div>
         </div>
 
+
     </section>
 </main>
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="/vendor/ckeditor/ckeditor.js"></script>
+<script src="../js/ckeditor.js"></script>
 
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/xml/xml.min.js"></script>
 </body>
 </html>

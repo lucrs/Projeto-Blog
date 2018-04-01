@@ -16,4 +16,6 @@ if( isset($_GET['id']) ) {
 
     $coments = $stmt->fetchAll();
 
+
+
 }
