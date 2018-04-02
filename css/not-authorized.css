@@ -1,0 +1,10 @@
+.not-authorized{
+    position: relative;
+    top: 241px;
+    text-align: center;
+    color: red;
+}
+
+.back-index a{
+    margin-top: 44px;
+}

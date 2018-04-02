@@ -13,10 +13,10 @@ if (empty($email) || empty($password)){
 
 $passwordHash = make_hash($password);
 
-$PDO = db_connect();
+$pdo = db_connect();
 
-$sql = "select id, name from users where email= :email and password= :password";
-$stmt = $PDO->prepare($sql);
+$sql = "select id, name,email,phone,cpf,nivel from users where email= :email and password= :password";
+$stmt = $pdo->prepare($sql);
 
 
 $stmt->bindParam(':email', $email);
@@ -25,6 +25,7 @@ $stmt->bindParam(':password', $passwordHash);
 $stmt->execute();
 
 $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 
 if (count($users) <= 0)
 {
@@ -39,5 +40,10 @@ session_start();
 $_SESSION['logged_in'] = true;
 $_SESSION['user_id'] = $user['id'];
 $_SESSION['user_name'] = $user['name'];
+$_SESSION['user_email'] = $user['email'];
+$_SESSION['user_phone'] = $user['phone'];
+$_SESSION['user_cpf'] = $user['cpf'];
+$_SESSION['user_nivel'] = $user['nivel'];
+
 
 header('Location: ../index.php');

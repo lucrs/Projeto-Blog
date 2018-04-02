@@ -14,16 +14,9 @@ require '../DB/check.php';
     <link rel="stylesheet" href="../css/painel.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.css">
-
-
-
-
-
-
-
-
 </head>
 <body>
+<?php if ($_SESSION['user_nivel'] == '1'){?>
 <nav class="navbar navbar-default sidebar" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -79,7 +72,20 @@ require '../DB/check.php';
     </section>
 </main>
 
-
+<?php } else{ ?>
+        <section id="not-authorized">
+            <div class="container">
+                <div class="row">
+                    <div class="not-authorized">
+                        <h1>Voce não tem permissão para acessar essa pagina</h1>
+                        <div class="back-index">
+                           <a href="/" class="btn btn-danger">Voltar pro inicio</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+<?php }?>
 <script src="../js/jquery-3.3.1.min.js"></script>
 <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 <script src="/vendor/ckeditor/ckeditor.js"></script>

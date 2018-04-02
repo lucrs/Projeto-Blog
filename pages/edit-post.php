@@ -17,6 +17,7 @@ require_once 'config-edit-post.php';
 
 </head>
 <body>
+<?php if ($_SESSION['user_nivel'] == '1'){?>
 <nav class="navbar navbar-default sidebar" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -109,6 +110,20 @@ require_once 'config-edit-post.php';
 
     </section>
 </main>
+<?php } else{ ?>
+    <section id="not-authorized">
+        <div class="container">
+            <div class="row">
+                <div class="not-authorized">
+                    <h1>Voce não tem permissão para acessar essa pagina</h1>
+                    <div class="back-index">
+                        <a href="/" class="btn btn-danger">Voltar pro inicio</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<?php }?>
 <script src="../js/jquery-3.3.1.min.js"></script>
 <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 <script src="/vendor/ckeditor/ckeditor.js"></script>

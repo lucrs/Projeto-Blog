@@ -40,6 +40,9 @@ require_once "config-blog.php";
             <li class="nav-item active">
                 <a class="nav-link" href="blog.php">Inicio <span class="sr-only">(current)</span></a>
             </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="painel.php">Painel <span class="sr-only">(current)</span></a>
+            </li>
             <li class="nav-item">
 
                 <?php echo '<a class="nav-link" href="logout.php?token='.md5(session_id()).'">Sair<span class="sr-only">(current)</span></a>'; ?>
