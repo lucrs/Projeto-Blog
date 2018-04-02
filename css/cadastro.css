@@ -14,7 +14,7 @@
 .cadastro{
     border: 2px solid black;
     width: 489px;
-    height:873px;
+    height:100%;
     border-radius: 9px 9px 9px 9px;
     background: #ffffff;
     display: flex;
@@ -45,4 +45,13 @@
     color: white;
     position: relative;
     top: 20px;
+}
+
+.error{
+    color: red;
+    border: 1px solid red;
+}
+#name-error,#email-error,#phone-error,#cpf-error,#password-error,#confirm-password-error{
+    color: red;
+    border: none;
 }

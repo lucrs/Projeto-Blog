@@ -5,12 +5,13 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Cadastro</title>
     <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/login.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 </head>
 <body>
+
 <div id="fullscreen_bg" class="fullscreen_bg"/>
     <div class="container">
         <div class="row">
@@ -20,7 +21,7 @@
                        <h2>Pagina de cadastro</h2>
                     </div>
                     <div class="card-body">
-                        <form action="cadastro.php" method="post">
+                        <form id="form-cad" action="cadastro.php" method="post">
 
                             <div class="ajust-cad">
                                 <label for="name">Nome</label>
@@ -72,8 +73,12 @@
     </div>
 </div>
 
+
 <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="../vendor/JQueryValidation/js/jquery.validate.js"></script>
+<script src="../js/valid-phone.js"></script>
+<script src="../js/valid-cpf.js"></script>
 <script src="../js/Check_Senha.js"></script>
 </body>
 </html>
