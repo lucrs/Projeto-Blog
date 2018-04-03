@@ -14,7 +14,7 @@ if( isset($_GET['id']) ) {
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
 
-    $coments = $stmt->fetchAll();
+    $coments = $stmt->fetchAll(PDO::FETCH_PROPS_LATE);
 
 
 

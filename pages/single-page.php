@@ -114,6 +114,7 @@ require_once 'comment.php';
         <div class="container">
             <div class="row">
                 <div class="comentarios">
+
                     <?php foreach ($coments as $coment){?>
                         <div class="comment-name">
                             <h3><?=$coment['nome'];?></h3>
@@ -122,8 +123,9 @@ require_once 'comment.php';
                             <p><?=$coment['comentario'];?></p><br>
                         </div>
 
-                    <?php }?>
+                    <?php  }?>
                 </div>
+
             </div>
         </div>
     </section>

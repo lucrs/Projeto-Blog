@@ -21,7 +21,7 @@
                        <h2>Pagina de cadastro</h2>
                     </div>
                     <div class="card-body">
-                        <form id="form-cad" action="cadastro.php" method="post">
+                        <form id="formCad" action="cadastro.php" method="post">
 
                             <div class="ajust-cad">
                                 <label for="name">Nome</label>
@@ -36,13 +36,13 @@
                             <div class="ajust-cad">
                                 <label for="phone">Telefone</label>
                                 <i class="fas fa-mobile"></i>
-                                <input type="text" id="phone"name="phone" class="form-control" placeholder="Digite seu telefone" required>
+                                <input type="text" id="phone" name="phone" class="form-control" placeholder="Digite seu telefone" required>
                             </div><br>
 
                             <div class="ajust-cad">
                                 <label for="cpf">CPF</label>
                                 <i class="fas fa-id-card"></i>
-                                <input type="text" id="cpf"name="cpf" class="form-control" placeholder="Digite seu cpf" required>
+                                <input type="text" id="cpf" name="cpf" class="form-control" placeholder="Digite seu cpf" required>
                             </div><br>
                                 <span id="error-pass"></span>
                             <div class="ajust-cad">
@@ -77,8 +77,8 @@
 <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="../vendor/JQueryValidation/js/jquery.validate.js"></script>
-<script src="../js/valid-phone.js"></script>
-<script src="../js/valid-cpf.js"></script>
+<script src="../js/valid-phone-cpf.js"></script>
+
 <script src="../js/Check_Senha.js"></script>
 </body>
 </html>
