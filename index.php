@@ -36,7 +36,7 @@ require 'DB/init.php';
                         <div class="visit">
                             <p>Ola, <span><?php echo $_SESSION['user_name'];?>.</span> </p>
                             <div class="button-index">
-                                <a class="btn btn-dark" href="pages/painel.php">Painel</a>
+                                <a class="btn btn-dark" href="pages/blog/painel.php">Painel</a>
                                 <?php echo '<a class="btn btn-dark" href="pages/logout.php?token='.md5(session_id()).'">Sair</a>'; ?><!-- adicionar botao entrar blog-->
                             </div>
                         </div>
