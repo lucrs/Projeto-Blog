@@ -4,4 +4,4 @@ Para fins de estudo... Em desenvolvimento.
 
 # Resumo
 
-Sistema de postagem de conteudo (BLOG) com um painel de controle, que só o admin consegue postar conteudo e o visitante cadastrado consegue visualizar e comentar nas postagens.
+CMS para postagem de conteudo (BLOG) com um painel de controle com niveis de acesso que só o administrador pode postar conteudo e o usuario comum so ver os seus dados e postar comentarios no blog.
